@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "Udemy_Section3",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "D:\\Programs\\UE_5.0"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	}
+}
