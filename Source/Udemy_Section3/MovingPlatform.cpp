@@ -16,12 +16,16 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
-	myX = myVector.X;
+	SetActorLocation(myVector);
 }
 
 // Called every frame
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	myVector.Y = myVector.Y + 1;
+
+	SetActorLocation(myVector);
 }
 
