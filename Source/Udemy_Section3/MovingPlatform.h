@@ -19,9 +19,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	FVector CalculateVelocity();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere) FVector myVector = FVector(0, 0, 0);
+	UPROPERTY(EditAnywhere) FVector myVector;
+
+	UPROPERTY(EditAnywhere) FVector velocity;
 };

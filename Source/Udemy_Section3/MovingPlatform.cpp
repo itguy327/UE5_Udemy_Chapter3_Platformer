@@ -9,13 +9,14 @@ AMovingPlatform::AMovingPlatform()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	myVector = FVector(0, 0, 0);
+	velocity = FVector(0, 0, 0);
 }
 
 // Called when the game starts or when spawned
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-
 	SetActorLocation(myVector);
 }
 
@@ -24,8 +25,13 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	myVector.Y = myVector.Y + 1;
+	SetActorLocation(CalculateVelocity());
+}
 
-	SetActorLocation(myVector);
+FVector AMovingPlatform::CalculateVelocity()
+{
+	myVector = myVector + velocity;
+	//return myVector + velocity;
+	return myVector;
 }
 
