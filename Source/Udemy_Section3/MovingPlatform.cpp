@@ -30,8 +30,6 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 FVector AMovingPlatform::CalculateVelocity()
 {
-	myVector = myVector + velocity;
-	//return myVector + velocity;
-	return myVector;
+	return GetActorLocation() + velocity;
 }
 
