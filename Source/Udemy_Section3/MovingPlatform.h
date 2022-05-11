@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <string>
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "MovingPlatform.generated.h"
@@ -19,13 +20,17 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	FVector CalculateVelocity();
+	FVector CalculateVelocity(float deltaTime);
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere) FVector myVector;
+	FString categoryName = "Moving Platform";
 
-	UPROPERTY(EditAnywhere) FVector velocity;
+	UPROPERTY(EditAnywhere, Category=categoryName) double maximumDistance;
+
+	UPROPERTY(EditAnywhere, Category=categoryName) FVector startLocation;
+
+	UPROPERTY(EditAnywhere, Category=categoryName) FVector velocity;
 };
